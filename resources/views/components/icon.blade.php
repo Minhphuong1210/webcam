@@ -1,0 +1,48 @@
+@props(['name', 'class' => 'size-5'])
+
+@php
+    $paths = [
+        'tower' => '<path d="M12 3v3m0 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-6.4-.6a9 9 0 0 0 0 12.7M18.4 5.4a9 9 0 0 1 0 12.7M8.5 21h7l-3.5-9-3.5 9Z"/>',
+        'list' => '<path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/>',
+        'user-plus' => '<path d="M15 19a6 6 0 0 0-12 0M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm10-3v6m3-3h-6"/>',
+        'users' => '<path d="M16 19a5 5 0 0 0-10 0M11 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6.5 0a3 3 0 0 0 0-6m4.5 14a5 5 0 0 0-3-4.6"/>',
+        'route' => '<path d="M6 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm12-10a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM6 15V9a4 4 0 0 1 4-4h2m6 4v6a4 4 0 0 1-4 4h-2"/>',
+        'file' => '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Zm0 0v5h5M9 13h6M9 17h4"/>',
+        'wallet' => '<path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3M21 12h-5a2 2 0 0 0 0 4h5v-4Zm0 0V9a2 2 0 0 0-2-2H5"/>',
+        'sliders' => '<path d="M4 6h10m4 0h2M4 12h4m4 0h8M4 18h12m4 0h0M16 4v4M10 10v4M18 16v4"/>',
+        'box' => '<path d="m21 8-9-5-9 5m18 0v8l-9 5m9-13-9 5m0 8-9-5V8m9 13v-8M3 8l9 5"/>',
+        'shield' => '<path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Zm-3 9 2 2 4-4"/>',
+        'history' => '<path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4m5-1v5l3 2"/>',
+        'chart' => '<path d="M4 20V10m6 10V4m6 16v-7m4 7H3"/>',
+        'phone' => '<path d="M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm3 15h2"/>',
+        'bell' => '<path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16l-2-2Zm-8 4a2 2 0 0 0 4 0"/>',
+        'alert' => '<path d="M12 9v4m0 3.5h.01M10.3 3.9 2.4 17.5A2 2 0 0 0 4.1 20.5h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>',
+        'pin' => '<path d="M12 21s-7-6.2-7-12a7 7 0 1 1 14 0c0 5.8-7 12-7 12Zm0-9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>',
+        'camera' => '<path d="M15 10.5 20 7v10l-5-3.5M5 6h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/>',
+        'search' => '<path d="m21 21-4.3-4.3M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z"/>',
+        'plus' => '<path d="M12 5v14m-7-7h14"/>',
+        'check' => '<path d="m5 12 5 5 9-10"/>',
+        'x' => '<path d="M6 6l12 12M18 6 6 18"/>',
+        'clock' => '<path d="M12 7v5l3 2m6-2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>',
+        'qr' => '<path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h2v2h-2v-2Zm4 0h2v2h-2v-2Zm-4 4h2v2h-2v-2Zm4 2h2m-4-4h4v2"/>',
+        'logout' => '<path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3M10 17l5-5-5-5m5 5H3"/>',
+        'chevron-right' => '<path d="m9 6 6 6-6 6"/>',
+        'chevron-left' => '<path d="m15 6-6 6 6 6"/>',
+        'call' => '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/>',
+        'wifi-off' => '<path d="M3 3l18 18M8.5 16.4a5 5 0 0 1 7 0M5 12.9a10 10 0 0 1 4.3-2.6m5.4.1a10 10 0 0 1 4.3 2.5M2 9.3A15 15 0 0 1 7 6.4m4.5-1.4A15 15 0 0 1 22 9.3M12 20h.01"/>',
+        'image' => '<path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 13 4.5-5 3.5 4 2.5-3L19 17M15.5 9.5h.01"/>',
+        'pen' => '<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4Zm9.5-13.5 4 4"/>',
+        'cash' => '<path d="M3 7h18v10H3V7Zm9 7.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM6 10v.01M18 14v.01"/>',
+        'flag' => '<path d="M5 21V4m0 0h11l-2 4 2 4H5"/>',
+        'refresh' => '<path d="M20 11a8 8 0 0 0-14.9-3M4 4v4h4m-4 5a8 8 0 0 0 14.9 3M20 20v-4h-4"/>',
+        'filter' => '<path d="M4 5h16l-6 8v6l-4-2v-4L4 5Z"/>',
+        'download' => '<path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/>',
+        'send' => '<path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/>',
+        'eye' => '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>',
+        'home' => '<path d="m3 11 9-8 9 8M5 9.5V20h5v-6h4v6h5V9.5"/>',
+        'calendar' => '<path d="M4 6h16v14H4V6Zm0 4h16M8 3v4m8-4v4"/>',
+        'scan' => '<path d="M4 8V5a1 1 0 0 1 1-1h3m8 0h3a1 1 0 0 1 1 1v3m0 8v3a1 1 0 0 1-1 1h-3m-8 0H5a1 1 0 0 1-1-1v-3m3-4h10"/>',
+    ];
+@endphp
+
+<svg {{ $attributes->merge(['class' => $class]) }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{!! $paths[$name] ?? '' !!}</svg>
